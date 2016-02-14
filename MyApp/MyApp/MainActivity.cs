@@ -26,7 +26,7 @@ namespace MyApp
             //button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
 
             CharacterSheet cs = CharacterSheet.Load();
-            
+            mapCharacToActivity(cs);
 
 
             //Button button1 = FindViewById<Button>(Resource.Id.button1);
@@ -36,17 +36,21 @@ namespace MyApp
 
         protected void mapCharacToActivity(CharacterSheet cs)
         {
-            TextView TxtViewCharName = FindViewById<Button>(Resource.Id.textViewCharName);
+            TextView TxtViewCharName = FindViewById<TextView>(Resource.Id.textViewCharName);
             TxtViewCharName.Text = cs.Nom;
 
-            TextView TxtViewCharClass = FindViewById<Button>(Resource.Id.textViewCharClass);
+            TextView TxtViewCharClass = FindViewById<TextView>(Resource.Id.textViewCharClass);
             TxtViewCharClass.Text = cs.ClasseActuelle;
 
-            TextView TxtViewCharRace = FindViewById<Button>(Resource.Id.textViewCharRace);
+            TextView TxtViewCharRace = FindViewById<TextView>(Resource.Id.textViewCharRace);
             TxtViewCharRace.Text = cs.Race;
 
-            TextView TxtViewCharNiveau = FindViewById<Button>(Resource.Id.textViewCharNiveau);
+            TextView TxtViewCharNiveau = FindViewById<TextView>(Resource.Id.textViewCharNiveau);
             TxtViewCharNiveau.Text = cs.NiveauGlobal.ToString();
+
+            GridView grdChar = FindViewById<GridView>(Resource.Id.gridViewCharac);
+            ///grdChar.
+
         }
 
     }

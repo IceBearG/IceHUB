@@ -110,6 +110,7 @@ namespace MyApp.BO.Business
             cs.CompetenceNonInnee = new Dictionary<string, int>();
             cs.CompetenceNonInnee.Add("Intimidation", 3);
 
+            cs.Characs = new List<Charac>();
             cs.Characs.Add(new Charac(Constants.characteristics.Force, force, force, CoreRules.getBonus(force), CoreRules.getBonus(force)));
             cs.Characs.Add(new Charac(Constants.characteristics.Dext, dex, dex, CoreRules.getBonus(dex), CoreRules.getBonus(dex)));
             cs.Characs.Add(new Charac(Constants.characteristics.Const, constit, constit, CoreRules.getBonus(constit), CoreRules.getBonus(constit)));
@@ -128,7 +129,9 @@ namespace MyApp.BO.Business
 
             Attaque at2 = new Attaque();
             at2.BonusBase = 2;
-
+            cs.ArmeEquipe = new List<Arme>();
+            cs.AttaqueArme = new List<Tuple<Arme, Attaque>>();
+            cs.Attaques = new Dictionary<int, Attaque>();
             cs.ArmeEquipe.Add(epee);
             cs.Attaques.Add(1,at1);
             cs.Attaques.Add(2,at2);
